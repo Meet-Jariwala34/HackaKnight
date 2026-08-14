@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Mock Interview - AI Talent Hub</title>    
+    <link rel="stylesheet" href="resume-corrections.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <link rel="stylesheet" href="index3.css">
+    <link rel="stylesheet" href="index7.css">
+    <link rel="icon" type="image/png" href="logo.png">
+    <script src="https://unpkg.com/lucide@latest"></script>
+   
+</head>
+<body>
+
+    <div class="app">
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+            <div class="brand">
+               <div class="brand-icon">
+                    <img src="microchip.png" alt="Logo">
+                </div>
+                <div class="brand-text">
+                    <span class="brand-name">AI Talent Hub</span>
+                    <span class="brand-subtitle">Recruiter Portal</span>
+                </div>
+            </div>
+
+            <nav class="navigation">
+                <a href="#" class="nav-item">
+                    <i data-lucide="layout-dashboard"></i>
+                    <span>Dashboard</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i data-lucide="file-pen-line"></i>
+                    <span>Resume Corrections</span>
+                </a>
+                <a href="#" class="nav-item">
+                     <i data-lucide="briefcase-business"></i>
+                    <span>Open Job Roles</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fa-solid fa-upload"></i>
+                    <span>Upload Resume</span>
+                </a>
+                <a href="#" class="nav-item active">
+                    <i class="fa-solid fa-brain"></i>
+                    <span>AI Mock Interview</span>
+                </a>
+            </nav>
+        </aside>
+
+        <!-- MAIN LAYOUT -->
+        <main class="main">
+            <!-- TOPBAR -->
+            <header class="topbar">
+                <div class="topbar-actions">
+                    <i class="fa-regular fa-bell topbar-icon"></i>
+                    <i class="fa-solid fa-gear topbar-icon"></i>
+                    <div class="avatar">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjJM3qWB8Tj62XWzp95Sd1AQpEJhVUYQXsWd6PKe1UTcMuPmjcaDdC7n0&s=10" alt="User Avatar">
+                    </div>
+                </div>
+            </header>
+
+            <!-- PAGE CONTENT -->
+            <section class="content">
+                <!-- PAGE HEADING -->
+                <div class="page-heading">
+                    <div class="heading-text">
+                        <h1>Senior Frontend Engineer</h1>
+                        <p>Technical Assessment</p>
+                    </div>
+                    <div class="timer-badge">
+                        <i class="fa-regular fa-clock"></i>
+                        <span>14:23</span>
+                    </div>
+                </div>
+
+                <!-- PROGRESS BAR -->
+                <div class="progress-wrapper">
+                    <div class="progress-bar"></div>
+                </div>
+
+                <div class="question-meta">
+                    <span class="question-step">Question 2 of 5</span>
+                    <span class="question-category">System Architecture</span>
+                </div>
+
+                <!-- AI INTERVIEWER CARD -->
+                <div class="card ai-card">
+                    <div class="ai-header">
+                        <div class="ai-avatar">
+                            <i class="fa-solid fa-waveform-lines">CR-7</i>
+                        </div>
+                        <div class="ai-content">
+                            <div class="ai-title">AI Interviewer</div>
+                            <p class="ai-question">
+                                "Explain how you would design a scalable, real-time notification system for a microservices architecture. Specifically, address how you would handle message persistence, guaranteed delivery, and backpressure when dealing with spikes in traffic."
+                            </p>
+                            <!-- Animated Audio Wave -->
+                            <div class="audio-wave">
+                                <div class="wave-bar"></div>
+                                <div class="wave-bar"></div>
+                                <div class="wave-bar"></div>
+                                <div class="wave-bar"></div>
+                                <div class="wave-bar"></div>
+                                <div class="wave-bar"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- USER RESPONSE CARD -->
+                <div class="card response-card">
+                    <div class="response-card-header">
+                        <span class="response-title">Your Response</span>
+                        <div class="recording-status">
+                            <div class="recording-dot"></div>
+                            <span>Recording</span>
+                        </div>
+                    </div>
+
+                    <textarea class="text-input-box" placeholder="Start speaking or typing your answer here..."></textarea>
+
+                    <div class="response-actions">
+                        <button class="mic-btn" title="Toggle Microphone">
+                            <i class="fa-solid fa-microphone"></i>
+                        </button>
+                        <button class="submit-btn">
+                            <span>SUBMIT ANSWER</span>
+                            <i class="fa-solid fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+<script>
+    lucide.createIcons();
+</script>
+</body>
+</html>
