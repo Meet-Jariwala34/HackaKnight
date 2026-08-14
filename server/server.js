@@ -5,19 +5,22 @@ require('dotenv').config();
 const app = require('./app');
 const setupInterviewSocket = require('./sockets/interviewSocket');
 
+// 1. Create HTTP server wrapping Express app
 const server = http.createServer(app);
 
-// Initialize Socket.io with CORS enabled
+// 2. Initialize Socket.io with CORS settings
 const io = new Server(server, {
   cors: {
-    origin: '*',
-    methods: ['GET', 'POST']
-  }
+    origin: ['http://localhost:5173', 'http://localhost:3000'],
+    methods: ['GET', 'POST'],
+    credentials: true,
+  },
 });
 
-// Attach our interview socket handler
+// 3. Attach Socket Event Handlers
 setupInterviewSocket(io);
 
+// 4. Start Server Listener
 const PORT = process.env.PORT || 5000;
 
 server.listen(PORT, () => {
