@@ -78,7 +78,7 @@ export default function Sidebar({ onLogout, user }) {
                           isActive ? 'text-white' : 'text-slate-400 group-hover:text-slate-200'
                         }`}
                       />
-                      <span>{item.label}</span>
+                      <span className='flex justify-center items-center'>{item.label}</span>
                     </div>
 
                     {item.badge && (
