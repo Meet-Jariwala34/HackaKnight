@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Talent Hub — Upload Resume</title>
+    <link rel="stylesheet" href="resume-corrections.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+   
+    <link rel="icon" type="image/png" href="logo.png">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="index2.css">
+    <link rel="stylesheet" href="index3.css">
+    <link rel="stylesheet" href="index5.css">
+   
+    <link rel="logo" type="img/png" href="logo.png">
+</head>
+<body>
+ 
+    <div class="app">
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+            <div class="brand">
+                <div class="brand-icon">
+                    <img src="microchip.png" alt="Logo">
+                </div>
+                <div class="brand-text">
+                    <span class="brand-name">AI Talent Hub</span>
+                    <span class="brand-subtitle">Recruiter Portal</span>
+                </div>
+            </div>
+
+            <nav class="navigation">
+                <a href="#" class="nav-item">
+                    <i data-lucide="layout-dashboard"></i>
+                    <span>Dashboard</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i data-lucide="file-edit"></i>
+                    <span>Resume Corrections</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i data-lucide="briefcase"></i>
+                    <span>Open Job Roles</span>
+                </a>
+                <a href="#" class="nav-item active">
+                    <i data-lucide="upload"></i>
+                    <span>Upload Resume</span>
+                </a>
+                <a href="#" class="nav-item">
+                   <i class="fa-solid fa-brain"></i>
+                    <span>AI Mock Interview</span>
+                </a>
+            </nav>
+        </aside>
+
+        <!-- MAIN LAYOUT -->
+        <main class="main">
+            <!-- TOPBAR -->
+            <header class="topbar">
+                <div class="topbar-actions">
+                    <i data-lucide="bell" class="topbar-icon"></i>
+                    <i data-lucide="settings" class="topbar-icon"></i>
+                    <div class="avatar">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjJM3qWB8Tj62XWzp95Sd1AQpEJhVUYQXsWd6PKe1UTcMuPmjcaDdC7n0&s=10" alt="User Avatar">
+                    </div>
+                </div>
+            </header>
+
+            <!-- CONTENT AREA -->
+            <div class="content">
+                <div class="page-heading">
+                    <h1>Upload Candidate Resume</h1>
+                    <p>Upload a resume document or image for AI analysis, skill extraction, and job matching.</p>
+                </div>
+
+                <div class="dashboard-grid upload-page-grid">
+                    <!-- LEFT CONTAINER: UPLOAD BOX -->
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title">
+                                <i data-lucide="file-up"></i>
+                                Resume Upload Zone
+                            </div>
+                        </div>
+
+                        <div class="card-body">
+                            <!-- DRAG & DROP AREA -->
+                            <div class="dropzone" id="dropzone">
+                                <input type="file" id="resumeInput" accept=".pdf,.doc,.docx,.png,.jpg,.jpeg,.webp" hidden>
+                                
+                                <div class="dropzone-content" id="dropzoneContent">
+                                    <div class="upload-icon-wrapper">
+                                        <i data-lucide="cloud-upload"></i>
+                                    </div>
+                                    <h3>Upload Here</h3>
+                                    <p class="dropzone-text">Drag & drop your resume file or image here, or <button class="browse-btn" id="browseBtn" type="button">browse files</button></p>
+                                    
+                                    <div class="upload-limits">
+                                        <span class="limit-badge"><i data-lucide="info"></i> Max File Size: <strong>5 MB</strong></span>
+                                        <span class="limit-badge">Supported formats: <strong>PDF, DOCX, PNG, JPG</strong></span>
+                                    </div>
+                                </div>
+
+                                <!-- FILE PREVIEW STATE (Hidden by default) -->
+                                <div class="file-preview" id="filePreview" style="display: none;">
+                                    <div class="file-info">
+                                        <div class="file-icon" id="fileIconContainer">
+                                            <i data-lucide="file-text" id="fileIcon"></i>
+                                        </div>
+                                        <div class="image-preview-thumbnail" id="imageThumbnail" style="display: none;">
+                                            <img id="previewImg" src="" alt="Resume Preview">
+                                        </div>
+
+                                        <div class="file-details">
+                                            <span class="file-name" id="fileName">resume.pdf</span>
+                                            <span class="file-size" id="fileSize">1.2 MB</span>
+                                        </div>
+                                        <button class="remove-file-btn" id="removeFileBtn" title="Remove file" type="button">
+                                            <i data-lucide="x"></i>
+                                        </button>
+                                    </div>
+
+                                    <div class="progress-container" id="progressContainer">
+                                        <div class="progress-bar">
+                                            <div class="progress-fill" id="progressFill"></div>
+                                        </div>
+                                        <span class="progress-text" id="progressText">Uploading... 0%</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- ERROR / WARNING BANNER -->
+                            <div class="upload-alert" id="uploadAlert" style="display: none;">
+                                <i data-lucide="alert-circle"></i>
+                                <span id="alertMessage">File size exceeds the 5 MB limit. Please select a smaller file.</span>
+                            </div>
+
+                            <button class="action-submit-btn" id="submitBtn" disabled>
+                                <i data-lucide="sparkles"></i> Process Resume with AI
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- RIGHT COLUMN: GUIDELINES -->
+                    <div class="right-column">
+                        <div class="card">
+                            <div class="card-header">
+                                <div class="card-title" style="font-size: 16px;">
+                                    <i data-lucide="check-circle-2"></i>
+                                    Upload Guidelines
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <ul class="guidelines-list">
+                                    <li>
+                                        <i data-lucide="check" class="check-icon"></i>
+                                        <span>Ensure document text or image quality is clear and readable.</span>
+                                    </li>
+                                    <li>
+                                        <i data-lucide="check" class="check-icon"></i>
+                                        <span>Strict file size restriction of <strong>5 MB</strong> maximum.</span>
+                                    </li>
+                                    <li>
+                                        <i data-lucide="check" class="check-icon"></i>
+                                        <span>Supported formats: PDF, DOCX, PNG, JPG, and WEBP images.</span>
+                                    </li>
+                                </ul>
+
+                                <div class="divider"></div>
+
+                                <div class="info-box">
+                                    <i data-lucide="shield-check"></i>
+                                    <p>Uploaded documents and images are processed securely using AI parser tools.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        lucide.createIcons();
+    </script>
+    <script src="index5.js"></script>
+</body>
+</html>

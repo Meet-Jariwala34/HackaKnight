@@ -1,0 +1,248 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Talent Hub — AI Mock Interview</title>
+    <link rel="stylesheet" href="resume-corrections.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <link rel="stylesheet" href="index3.css">
+    <link rel="icon" type="image/png" href="logo.png">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="index6.css">
+    <link rel="logo" type="img/png" href="logo.png">
+</head>
+<body>
+
+    <div class="app">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+            <div class="brand">
+                <div class="brand-icon">
+                    <img src="microchip.png" alt="Logo">
+                </div>
+                <div class="brand-text">
+                    <span class="brand-name">AI Talent Hub</span>
+                    <span class="brand-subtitle">Recruiter Portal</span>
+                </div>
+            </div>
+
+            <nav class="navigation">
+                <a href="dashboard.html" class="nav-item">
+                    <i data-lucide="layout-dashboard"></i>
+                    <span>Dashboard</span>
+                </a>
+                <a href="resume-corrections.html" class="nav-item">
+                    <i data-lucide="file-pen-line"></i>
+                    <span>Resume Corrections</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i data-lucide="briefcase-business"></i>
+                    <span>Open Job Roles</span>
+                </a>
+                <a href="#" class="nav-item">
+                   <i class="fa-solid fa-upload"></i>
+                <span>Upload Resume</span>
+                </a>
+                <!-- ACTIVE LINK -->
+                <a href="mock-interview.html" class="nav-item active">
+                    <i class="fa-solid fa-brain"></i>
+                    <span>AI Mock Interview</span>
+                </a>
+            </nav>
+
+            <!-- SIDEBAR FOOTER LOGOUT -->
+            <div class="sidebar-footer">
+                <a href="index.html" class="nav-item logout-btn">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    <span>Logout</span>
+                </a>
+            </div>
+        </aside>
+
+        <!-- MAIN LAYOUT -->
+        <main class="main">
+
+            <!-- TOPBAR -->
+            <header class="topbar">
+                <div class="search-bar">
+                    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                    <input type="text" placeholder="Search candidates, roles...">
+                </div>
+                <div class="topbar-actions">
+                    <div class="notification-badge-wrapper">
+                        <i class="fa-regular fa-bell topbar-icon"></i>
+                        <span class="notification-dot"></span>
+                    </div>
+                    <i class="fa-solid fa-gear topbar-icon"></i>
+                    <div class="avatar">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjJM3qWB8Tj62XWzp95Sd1AQpEJhVUYQXsWd6PKe1UTcMuPmjcaDdC7n0&s=10" alt="User Avatar">
+                    </div>
+                </div>
+            </header>
+
+            <!-- MAIN CONTENT CONTAINER -->
+            <div class="content">
+
+                <!-- PAGE HEADING -->
+                <div class="page-heading">
+                    <div class="heading-text">
+                        <h1>Mock Interview Session</h1>
+                        <p>Configure and launch AI-driven technical evaluations.</p>
+                    </div>
+                    <div class="estimated-time">
+                        <i class="fa-regular fa-clock"></i>
+                        <span>Estimated time: 45m</span>
+                    </div>
+                </div>
+
+                <!-- MAIN DASHBOARD GRID -->
+                <div class="interview-grid">
+
+                    <!-- LEFT COLUMN: MAIN CONFIGURATION CARD -->
+                    <div class="card main-config-card">
+                        
+                        <!-- ROLE HEADER -->
+                        <div class="role-header">
+                            <div class="role-icon-box">
+                                <i class="fa-solid fa-code"></i>
+                            </div>
+                            <div class="role-details">
+                                <h2>Full Stack Engineer</h2>
+                                <div class="role-meta">
+                                    <span><i class="fa-regular fa-building"></i> Top Tech Firm</span>
+                                    <span class="meta-dot">•</span>
+                                    <span><i class="fa-solid fa-location-dot"></i> San Francisco / Remote</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- EVALUATION FOCUS AREAS -->
+                        <div class="focus-section">
+                            <span class="section-label">EVALUATION FOCUS AREAS</span>
+                            <div class="focus-tags">
+                                <span class="focus-tag"><i class="fa-brands fa-js"></i> JavaScript (ES6+)</span>
+                                <span class="focus-tag"><i class="fa-solid fa-sitemap"></i> System Design</span>
+                                <span class="focus-tag"><i class="fa-solid fa-shapes"></i> Problem Solving</span>
+                                <span class="focus-tag"><i class="fa-regular fa-comments"></i> Communication</span>
+                                <span class="focus-tag"><i class="fa-solid fa-list-check"></i> Database Architecture</span>
+                            </div>
+                        </div>
+
+                        <!-- AI INTERVIEWER PERSONA BOX -->
+                        <div class="persona-box">
+                            <div class="persona-title">
+                                <i class="fa-solid fa-robot"></i>
+                                <span>AI Interviewer Persona</span>
+                            </div>
+                            <p>Configured as a Senior Engineering Manager. Tone is professional, analytical, and probing. Will focus heavily on practical application of architectural principles and behavioral responses under pressure.</p>
+                        </div>
+
+                        <!-- BEGIN INTERVIEW BUTTON -->
+                        <button class="btn-launch">
+                            <i class="fa-solid fa-video"></i> Begin Interactive Interview
+                        </button>
+
+                    </div>
+
+                    <!-- RIGHT COLUMN: QUESTION BANK & SYSTEM CHECK -->
+                    <div class="right-column">
+
+                        <!-- QUESTION BANK SETUP CARD -->
+                        <div class="card side-card">
+                            <div class="card-title-row">
+                                <h3>Question Bank Setup</h3>
+                                <i class="fa-solid fa-pen edit-icon"></i>
+                            </div>
+
+                            <div class="q-list">
+                                <div class="q-item green-q">
+                                    <div class="q-left">
+                                        <div class="q-icon-bg green-bg">
+                                            <i class="fa-regular fa-user"></i>
+                                        </div>
+                                        <span class="q-name">Behavioral</span>
+                                    </div>
+                                    <span class="q-count">3 Qs</span>
+                                </div>
+
+                                <div class="q-item blue-q">
+                                    <div class="q-left">
+                                        <div class="q-icon-bg blue-bg">
+                                            <i class="fa-solid fa-code"></i>
+                                        </div>
+                                        <span class="q-name">Technical</span>
+                                    </div>
+                                    <span class="q-count">2 Qs</span>
+                                </div>
+
+                                <div class="q-item purple-q">
+                                    <div class="q-left">
+                                        <div class="q-icon-bg purple-bg">
+                                            <i class="fa-solid fa-diagram-project"></i>
+                                        </div>
+                                        <span class="q-name">System Design</span>
+                                    </div>
+                                    <span class="q-count">1 Q</span>
+                                </div>
+                            </div>
+
+                            <button class="btn-outline">
+                                <i class="fa-regular fa-folder-open"></i> Practice Question Bank
+                            </button>
+                        </div>
+
+                        <!-- SYSTEM CHECK CARD -->
+                        <div class="card side-card">
+                            <h3 class="sys-title">System Check</h3>
+
+                            <div class="sys-list">
+                                <div class="sys-item">
+                                    <div class="sys-left">
+                                        <i class="fa-regular fa-circle-check sys-check-icon"></i>
+                                        <span>Camera</span>
+                                    </div>
+                                    <span class="sys-val">HD Web Camera</span>
+                                </div>
+
+                                <div class="sys-item">
+                                    <div class="sys-left">
+                                        <i class="fa-regular fa-circle-check sys-check-icon"></i>
+                                        <span>Microphone</span>
+                                    </div>
+                                    <span class="sys-val">Default Mic</span>
+                                </div>
+
+                                <div class="sys-item">
+                                    <div class="sys-left">
+                                        <i class="fa-regular fa-circle-check sys-check-icon"></i>
+                                        <span>Connection</span>
+                                    </div>
+                                    <span class="sys-val">120 Mbps</span>
+                                </div>
+                            </div>
+
+                            <a href="#" class="rerun-link">Re-run Diagnostics</a>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </main>
+
+    </div>
+<script>
+    lucide.createIcons();
+</script>
+</body>
+</html>
