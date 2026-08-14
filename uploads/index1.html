@@ -1,1 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HackaKnight — Sign In</title>
+  <link rel="stylesheet" href="index1.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <link rel="icon" type="image/png" href="logo.png">
+</head>
+
+<body>
+
+  <div class="login-page">
+
+    <section class="left-panel">
+      <!-- Background -->
+      <div class="background-network"></div>
+      <div class="left-overlay"></div>
+      <!-- Content -->
+      <div class="left-content">
+
+        <!-- LOGO -->
+        <div class="brand">
+          <div class="brand-icon">
+            <span><img src="logo.png" alt=""></span>
+          </div>
+          <h1>HackaKnight</h1>
+        </div>
+        <!-- TITLE -->
+        <div class="title">
+          <h2>
+            Automated Resume Parser &
+            AI Mock Interviewer
+          </h2>
+          <p>
+            Streamline your recruitment process with intelligent parsing and realistic interview simulations.
+          </p>
+          <!-- features-->
+          <div class="features">
+            <div class="feature">
+              <div class="feature-icon">
+                <span><i class="fa-solid fa-file-lines"></i></span>
+              </div>
+              <div class="feature-content">
+                <h3>
+                  Intelligent Resume Parsing
+                </h3>
+                <p>
+                  Extract skills,experience, and education with high accuracy using our advanced NLP models.
+                </p>
+              </div>
+            </div>
+            <div class="feature">
+              <div class="feature-icon">
+                <span><i class="fa-regular fa-user"></i></span>
+              </div>
+              <div class="feature-content">
+                <h3>AI Mock Interviews</h3>
+                <p>Conduct role-specific technical and behavioral
+                  interviews powered by generative AI.
+                </p>
+              </div>
+            </div>
+
+            <div class="feature">
+              <div class="feature-icon">
+                <span><i class="">◎</i></span>
+              </div>
+              <div class="feature-content">
+                <h3>Skill Gap Analysis</h3>
+                <p>Identify deficiencies between candidate
+                  profiles and job requirements.
+                </p>
+              </div>
+            </div>
+            <div class="left-footer">
+              © 2025 HackaKnight Platform.
+              All rights reserved.
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- right side -->
+    <section class="right-panel">
+      <div class="login-container">
+        <div class="login-heading">
+          <h3>Welcome Back</h3>
+          <p>Please enter your details to sign in.</p>
+        </div>
+        
+        <!-- login box-->
+        <div class="login-card">
+          <!-- Added id="loginForm" here -->
+          <form id="loginForm">
+            <!-- email-->
+            <div class="form-group">
+              <label for="email">EMAIL ADDRESS</label>
+              <input type="email" id="email" placeholder="Enter your email" required>
+            </div>
+            <!-- pass-->
+            <div class="password-group">
+              <label for="password">PASSWORD</label>
+              <a href="#">Forgot password?</a>
+              <input type="password" id="password" placeholder="••••••••" required>
+            </div>
+            <!-- sign in button triggers form submission -->
+            <button type="submit" class="sign-in-btn">
+              Sign In
+            </button>
+
+          </form>
+          
+          <!-- Request access-->
+          <div class="request-access">
+            <span>Don't have an account?</span>
+            <a href="#">Request Access</a>
+          </div>
+        </div>
+
+        <!-- after sign in hackathon card -->
+        <div class="judges-card">
+          <div class="judges-info">
+            <h3>Hackathon Judges</h3>
+            <p>Access the pre-populated demo environment.</p>
+          </div>
+          <!-- Added id="demoBtn" and type="button" -->
+          <button id="demoBtn" type="button" class="demo-login">
+            <span><i class="fa-solid fa-rocket"></i></span>
+            Demo login
+          </button>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <!-- SCRIPT FOR REDIRECTION -->
+  <script>
+    // 1. Redirect on Sign In button click / form submission
+    document.getElementById('loginForm').addEventListener('submit', function(e) {
+      e.preventDefault(); // Prevents page refresh
+      window.location.href = 'file:///D:/HTML/css/hackathon%20project/index2.html'; 
+    });
+
+ 
+    document.getElementById('demoBtn').addEventListener('click', function() {
+      window.location.href = 'file:///D:/HTML/css/hackathon%20project/index2.html';
+    });
+  </script>
+
+</body>
+
+</html>
