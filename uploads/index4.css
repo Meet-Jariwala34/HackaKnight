@@ -1,0 +1,677 @@
+/* =========================================================
+   1. GLOBAL STYLES & RESETS
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: #f7f8fc;
+    color: #0f172a;
+    overflow-x: hidden;
+}
+
+/* =========================================================
+   2. MAIN DASHBOARD LAYOUT
+========================================================= */
+
+.dashboard {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+}
+
+/* =========================================================
+   3. SIDEBAR CONTAINER
+========================================================= */
+
+.sidebar {
+    width: 250px;
+    min-height: 100vh;
+    background: #211d52;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    padding: 22px 10px;
+    flex-shrink: 0;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 10;
+    border-right: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+/* =========================================================
+   4. BRAND / LOGO SECTION
+========================================================= */
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0 8px;
+    margin-bottom: 32px;
+}
+
+.brand-icon {
+    width: 36px;
+    height: 36px;
+    background: #6c63ff;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    flex-shrink: 0;
+    box-shadow: 0 5px 15px rgba(108, 99, 255, 0.20);
+}
+
+.brand-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.brand-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.brand-text h1 {
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: -0.02em;
+}
+
+.brand-text span {
+    font-size: 12px;
+    color: #7f7ab2;
+    margin-top: 1px;
+}
+
+/* Horizontal line under logo */
+.sidebar::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 98px;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+/* =========================================================
+   5. SIDEBAR NAVIGATION LINKS
+========================================================= */
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.nav-item {
+    width: 100%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0 13px;
+    border-radius: 22px;
+    color: #aaa6e8;
+    font-size: 13px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.nav-item:hover {
+    background: rgba(108, 99, 255, 0.12);
+    color: #ffffff;
+}
+
+.nav-item.active {
+    background: #39338c;
+    color: #ffffff;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.nav-icon {
+    width: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 17px;
+    color: #a9a5ff;
+    flex-shrink: 0;
+}
+
+.nav-item.active .nav-icon {
+    color: #ffffff;
+}
+
+/* =========================================================
+   6. MAIN CONTENT AREA
+========================================================= */
+
+.main-content {
+    margin-left: 250px;
+    width: calc(100% - 250px);
+    min-height: 100vh;
+    background: #f7f8fc;
+}
+
+/* =========================================================
+   7. TOP BAR
+========================================================= */
+
+.topbar {
+    height: 64px;
+    background: #ffffff;
+    border-bottom: 1px solid #e5e7ef;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 24px;
+    position: sticky;
+    top: 0;
+    z-index: 5;
+}
+
+/* Search Box */
+.search-box {
+    width: 235px;
+    height: 32px;
+    background: #f7f8fc;
+    border: 1px solid #e0e3ec;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    gap: 8px;
+}
+
+.search-icon {
+    color: #667085;
+    font-size: 19px;
+    line-height: 1;
+}
+
+.search-box input {
+    width: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-family: inherit;
+    font-size: 12px;
+    color: #0f172a;
+}
+
+.search-box input::placeholder {
+    color: #7b8497;
+}
+
+/* Topbar Actions (Icons & Profile Avatar) */
+.topbar-actions {
+    display: flex;
+    align-items: center;
+    gap: 17px;
+}
+
+.topbar-icon {
+    width: 25px;
+    height: 25px;
+    border: none;
+    background: transparent;
+    color: #344054;
+    cursor: pointer;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.topbar-icon:hover {
+    color: #6c63ff;
+}
+
+.profile-avatar {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 1px solid #d8dbe5;
+    background: #e5e7eb;
+}
+
+.profile-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* =========================================================
+   8. PAGE CONTAINER & HEADER
+========================================================= */
+
+.page-container {
+    padding: 24px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.page-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 24px;
+}
+
+.page-header h2 {
+    font-size: 26px;
+    line-height: 32px;
+    font-weight: 800;
+    letter-spacing: -0.025em;
+    color: #101828;
+}
+
+.page-header p {
+    margin-top: 6px;
+    font-size: 12px;
+    color: #667085;
+    line-height: 18px;
+}
+
+.new-job-btn {
+    height: 33px;
+    padding: 0 16px;
+    border: none;
+    border-radius: 6px;
+    background: #3867e8;
+    color: #ffffff;
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    box-shadow: 0 3px 8px rgba(56, 103, 232, 0.18);
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.new-job-btn:hover {
+    background: #2f59d0;
+    transform: translateY(-1px);
+}
+
+.plus {
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1;
+}
+
+/* =========================================================
+   9. JOB CARD & FILTER BAR
+========================================================= */
+
+.job-card {
+    width: 100%;
+    background: #ffffff;
+    border: 1px solid #e5e7ef;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(15, 23, 42, 0.045);
+}
+
+.filter-bar {
+    height: 64px;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    padding: 0 16px;
+    border-bottom: 1px solid #eef0f5;
+}
+
+.filter-btn {
+    height: 30px;
+    padding: 0 11px;
+    background: #f1f2f6;
+    border: none;
+    border-radius: 6px;
+    color: #344054;
+    font-family: inherit;
+    font-size: 11px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+}
+
+.filter-btn span {
+    color: #667085;
+    font-size: 13px;
+}
+
+.filter-btn:hover {
+    background: #e9e8f8;
+    color: #39338c;
+}
+
+/* =========================================================
+   10. JOB TABLE & ROWS
+========================================================= */
+
+.job-table {
+    width: 100%;
+}
+
+.table-row {
+    display: grid;
+    grid-template-columns: 30% 32% 25% 13%;
+    min-height: 80px;
+    border-bottom: 1px solid #eef0f5;
+}
+
+.table-row:last-child {
+    border-bottom: none;
+}
+
+.table-row:not(.table-header):hover {
+    background: #fafaff;
+}
+
+/* Table Header */
+.table-header {
+    min-height: 58px;
+    align-items: center;
+    background: #ffffff;
+}
+
+.table-header > div {
+    font-size: 11px;
+    font-weight: 800;
+    color: #344054;
+    letter-spacing: 0.01em;
+}
+
+.job-column,
+.skills-column,
+.match-column,
+.action-column {
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+/* Columns Details */
+.job-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.job-column h3 {
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 18px;
+    color: #101828;
+    margin-bottom: 2px;
+}
+
+.job-column p {
+    font-size: 11px;
+    line-height: 17px;
+    color: #8994a7;
+}
+
+/* Skills Badges */
+.skills-column {
+    display: flex;
+    align-items: center;
+}
+
+.skills {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.skill {
+    display: inline-flex;
+    align-items: center;
+    min-height: 24px;
+    padding: 0 8px;
+    border-radius: 3px;
+    background: #f0f2f6;
+    color: #475467;
+    font-size: 11px;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+/* Match Score */
+.match-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 4px;
+}
+
+.match-score {
+    display: inline-flex;
+    align-items: center;
+    height: 25px;
+    padding: 0 10px;
+    border-radius: 15px;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.match-score.green {
+    background: #d9fbe7;
+    color: #178447;
+}
+
+.match-score.yellow {
+    background: #fff1a8;
+    color: #9a7200;
+}
+
+.candidate-count {
+    font-size: 11px;
+    color: #8994a7;
+}
+
+/* Action Button */
+.action-column {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.action-btn {
+    width: 28px;
+    height: 28px;
+    background: transparent;
+    border: none;
+    border-radius: 6px;
+    color: #667085;
+    font-size: 18px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.action-btn:hover {
+    background: #f1f0ff;
+    color: #6c63ff;
+}
+
+/* =========================================================
+   11. PAGINATION & FOOTER
+========================================================= */
+
+.table-footer {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px;
+    border-top: 1px solid #eef0f5;
+}
+
+.showing-text {
+    font-size: 11px;
+    color: #8994a7;
+}
+
+.pagination {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+
+.page-number,
+.page-arrow {
+    width: 28px;
+    height: 28px;
+    border: none;
+    background: transparent;
+    border-radius: 4px;
+    color: #667085;
+    font-family: inherit;
+    font-size: 11px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.page-number:hover,
+.page-arrow:hover {
+    background: #f1f0ff;
+    color: #6c63ff;
+}
+
+.active-page {
+    background: #f0f1f5;
+    color: #101828;
+    font-weight: 700;
+}
+
+.page-arrow {
+    font-size: 20px;
+    color: #98a2b3;
+}
+
+/* =========================================================
+   12. RESPONSIVE MEDIA QUERIES
+========================================================= */
+
+@media (max-width: 900px) {
+    .sidebar {
+        width: 210px;
+    }
+
+    .main-content {
+        margin-left: 210px;
+        width: calc(100% - 210px);
+    }
+
+    .page-container {
+        padding: 20px;
+    }
+
+    .table-row {
+        grid-template-columns: 30% 30% 27% 13%;
+    }
+}
+
+@media (max-width: 700px) {
+    .sidebar {
+        width: 65px;
+        padding: 20px 8px;
+    }
+
+    .brand {
+        justify-content: center;
+        padding: 0;
+        margin-bottom: 30px;
+    }
+
+    .brand-text {
+        display: none;
+    }
+
+    .sidebar::after {
+        top: 88px;
+    }
+
+    .nav-item {
+        justify-content: center;
+        padding: 0;
+    }
+
+    .nav-item span:last-child {
+        display: none;
+    }
+
+    .main-content {
+        margin-left: 65px;
+        width: calc(100% - 65px);
+    }
+
+    .topbar {
+        padding: 0 15px;
+    }
+
+    .search-box {
+        width: 200px;
+    }
+
+    .page-header {
+        align-items: flex-start;
+        gap: 15px;
+        flex-direction: column;
+    }
+
+    .job-card {
+        overflow-x: auto;
+    }
+
+    .job-table {
+        min-width: 750px;
+    }
+}
+
+@media (max-width: 480px) {
+    .search-box {
+        width: 160px;
+    }
+
+    .topbar-actions {
+        gap: 8px;
+    }
+
+    .page-header h2 {
+        font-size: 22px;
+    }
+}

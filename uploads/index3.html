@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Talent Hub — Resume Corrections</title>
+    <link rel="stylesheet" href="resume-corrections.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <link rel="stylesheet" href="index3.css">
+    <link rel="icon" type="image/png" href="logo.png">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+    <div class="app">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+            <div class="brand">
+                <div class="brand-icon">
+                    <img src="microchip.png" alt="Logo">
+                </div>
+                <div class="brand-text">
+                    <span class="brand-name">AI Talent Hub</span>
+                    <span class="brand-subtitle">Recruiter Portal</span>
+                </div>
+            </div>
+
+            <nav class="navigation">
+                <a href="dashboard.html" class="nav-item">
+                   <i data-lucide="layout-dashboard"></i>
+                    <span>Dashboard</span>
+                </a>
+                <a href="resume-corrections.html" class="nav-item active">
+                    <i data-lucide="file-pen-line"></i>
+                    <span>Resume Corrections</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i data-lucide="briefcase-business"></i>
+                    <span>Open Job Roles</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fa-solid fa-upload"></i>
+                <span>Upload Resume</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fa-solid fa-brain"></i>
+                    <span>AI Mock Interview</span>
+                </a>
+            </nav>
+        </aside>
+
+        <!-- MAIN LAYOUT -->
+        <main class="main">
+
+            <!-- TOPBAR -->
+            <header class="topbar">
+                <div class="topbar-title">Resume Corrections</div>
+                <div class="topbar-actions">
+                    <i class="fa-regular fa-bell topbar-icon"></i>
+                    <i class="fa-solid fa-gear topbar-icon"></i>
+                    <div class="avatar">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjJM3qWB8Tj62XWzp95Sd1AQpEJhVUYQXsWd6PKe1UTcMuPmjcaDdC7n0&s=10" alt="User Avatar">
+                    </div>
+                </div>
+            </header>
+
+            <!-- MAIN CONTENT CONTAINER -->
+            <div class="content">
+
+                <!-- PROFILE BANNER / HEADER -->
+                <div class="profile-header">
+                    <div class="profile-title-group">
+                        <h1>Alex Rivers</h1>
+                        <span class="target-badge">
+                            <i class="fa-solid fa-bullseye"></i> Target: Senior Full Stack Engineer
+                        </span>
+                    </div>
+
+                    <div class="header-actions">
+                        <button class="btn btn-secondary">Open Question Bank</button>
+                        <button class="btn btn-primary">
+                            <i class="fa-solid fa-brain"></i> Start AI Mock Interview
+                        </button>
+                    </div>
+                </div>
+
+                <!-- TOP METRICS GRID -->
+                <div class="metrics-grid">
+
+                    <!-- CANDIDATE PROFILE CARD -->
+                    <div class="card card-profile">
+                        <div class="card-title-group">
+                            <i class="fa-regular fa-user card-title-icon icon-blue"></i>
+                            <h3>Candidate Profile</h3>
+                        </div>
+
+                        <div class="profile-data">
+                            <div class="data-group">
+                                <label>EXPERIENCE</label>
+                                <p>5+ years</p>
+                            </div>
+
+                            <div class="data-group">
+                                <label>EDUCATION</label>
+                                <p>MS Computer Science</p>
+                            </div>
+
+                            <div class="data-group">
+                                <label>VERIFIED SKILLS</label>
+                                <div class="skill-tags">
+                                    <span class="skill-tag green">React</span>
+                                    <span class="skill-tag green">Node.js</span>
+                                    <span class="skill-tag green">AWS</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ATS MATCH SCORE CARD -->
+                    <div class="card card-score">
+                        <h3>ATS Match Score</h3>
+
+                        <div class="gauge-container">
+                            <svg class="gauge" viewBox="0 0 100 100">
+                                <circle class="gauge-bg" cx="50" cy="50" r="40"></circle>
+                                <circle class="gauge-fill" cx="50" cy="50" r="40"></circle>
+                            </svg>
+                            <div class="gauge-text">
+                                <span class="score-value">78</span>
+                                <span class="score-max">/100</span>
+                            </div>
+                        </div>
+
+                        <p class="score-caption">Strong match for Senior Full Stack Engineer role.</p>
+                    </div>
+
+                    <!-- DETECTED SKILL GAPS CARD -->
+                    <div class="card card-gaps">
+                        <div class="card-title-group">
+                            <i class="fa-solid fa-triangle-exclamation card-title-icon icon-warning"></i>
+                            <h3>Detected Skill Gaps</h3>
+                        </div>
+
+                        <p class="gaps-subtext">The following required skills are missing or underrepresented in the current resume:</p>
+
+                        <div class="gap-tags">
+                            <span class="gap-tag">Kubernetes</span>
+                            <span class="gap-tag">GraphQL</span>
+                            <span class="gap-tag">System Design</span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- LOWER SECTION: AI IMPROVEMENT ADVICE -->
+                <div class="dashboard-bottom">
+
+                    <div class="card card-advice">
+                        <div class="card-title-group">
+                            <i class="fa-solid fa-wand-magic-sparkles card-title-icon icon-purple"></i>
+                            <h3>AI Improvement Advice</h3>
+                        </div>
+
+                        <div class="advice-list">
+
+                            <!-- ADVICE ITEM 1 -->
+                            <div class="advice-item">
+                                <div class="advice-icon">
+                                    <i class="fa-solid fa-chart-line"></i>
+                                </div>
+                                <div class="advice-content">
+                                    <h4>Impact Quantification</h4>
+                                    <p>Quantify your achievements in the AWS migration section. Specify the percentage cost reduction or performance improvement achieved.</p>
+                                </div>
+                            </div>
+
+                            <!-- ADVICE ITEM 2 -->
+                            <div class="advice-item">
+                                <div class="advice-icon">
+                                    <i class="fa-solid fa-list-check"></i>
+                                </div>
+                                <div class="advice-content">
+                                    <h4>Highlight Missing Skills</h4>
+                                    <p>Integrate projects or experiences involving Kubernetes and GraphQL to address the detected skill gaps for this specific target role.</p>
+                                </div>
+                            </div>
+
+                            <!-- ADVICE ITEM 3 -->
+                            <div class="advice-item">
+                                <div class="advice-icon">
+                                    <i class="fa-solid fa-align-left"></i>
+                                </div>
+                                <div class="advice-content">
+                                    <h4>Consolidate Older Roles</h4>
+                                    <p>Reduce the bullet points in roles older than 5 years to maintain focus on relevant, recent Senior-level experience.</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </main>
+
+    </div>
+<script>
+    lucide.createIcons();
+</script>
+</body>
+</html>

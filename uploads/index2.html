@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Talent Hub — Dashboard</title>
+    <link rel="stylesheet" href="resume-corrections.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <link rel="stylesheet" href="index3.css">
+    <link rel="icon" type="image/png" href="logo.png">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="index2.css">
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <div class="brand">
+            <div class="brand-icon"><img src="microchip.png" alt=""></div>
+
+            <div class="brand-text">
+                <div class="brand-name">AI Talent Hub</div>
+                <div class="brand-subtitle">Recruiter Portal</div>
+            </div>
+        </div>
+
+
+        <nav class="navigation">
+
+            <a href="#" class="nav-item active">
+                <i data-lucide="layout-dashboard"></i>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="#" class="nav-item">
+                <i data-lucide="file-pen-line"></i>
+                <span>Resume Corrections</span>
+            </a>
+
+            <a href="#" class="nav-item">
+                <i data-lucide="briefcase-business"></i>
+                <span>Open Job Roles</span>
+            </a>
+
+            <a href="#" class="nav-item">
+                <i class="fa-solid fa-upload"></i>
+                <span>Upload Resume</span>
+            </a>
+
+            <a href="#" class="nav-item">
+               <i class="fa-solid fa-brain"></i>
+                <span>AI Mock Interview</span>
+            </a>
+
+        </nav>
+
+    </aside>
+
+
+    <!--  MAIN  -->
+
+    <main class="main">
+
+        <!-- TOP BAR -->
+
+        <header class="topbar">
+
+            <div class="topbar-actions">
+
+                <i
+                    data-lucide="bell"
+                    class="topbar-icon"
+                ></i>
+
+                <i
+                    data-lucide="settings"
+                    class="topbar-icon"
+                ></i>
+
+                <div class="avatar">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjJM3qWB8Tj62XWzp95Sd1AQpEJhVUYQXsWd6PKe1UTcMuPmjcaDdC7n0&s=10" alt="">
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- CONTENT -->
+
+        <section class="content">
+
+
+            <div class="page-heading">
+
+                <h1>
+                    HackaKnight Dashboard
+                </h1>
+
+                <p>
+                    Here is your current candidate overview and readiness assessment.
+                </p>
+
+            </div>
+
+
+            <!--  CARDS -->
+
+            <div class="kpi-grid">
+
+
+                <!-- ATS SCORE -->
+
+                <div class="kpi-card">
+
+                    <div class="kpi-header">
+
+                        <span class="kpi-label">
+                            ATS Match Score
+                        </span>
+
+                        <i
+                            data-lucide="scan-line"
+                            class="kpi-icon"
+                        ></i>
+
+                    </div>
+
+
+                    <div class="kpi-value-row">
+
+                        <span class="kpi-value">
+                            78%
+                        </span>
+
+                        <span class="kpi-status">
+                            ↗ +5%
+                        </span>
+
+                    </div>
+
+
+                    <div class="score-bar">
+                        <div class="score-fill"></div>
+                    </div>
+
+                </div>
+
+
+                <!-- MISSING SKILLS -->
+
+                <div class="kpi-card">
+
+                    <div class="kpi-header">
+
+                        <span class="kpi-label">
+                            Missing Skills
+                        </span>
+
+                        <i
+                            data-lucide="triangle-alert"
+                            class="kpi-icon warning"
+                        ></i>
+
+                    </div>
+
+
+                    <div class="kpi-value-row">
+
+                        <span class="kpi-value">
+                            4
+                        </span>
+
+                        <span class="kpi-small">
+                            identified
+                        </span>
+
+                    </div>
+
+
+                    <p class="kpi-description">
+                        Action required to improve match.
+                    </p>
+
+                </div>
+
+
+                <!-- PRACTICE SESSIONS -->
+
+                <div class="kpi-card">
+
+                    <div class="kpi-header">
+
+                        <span class="kpi-label">
+                            Practice Sessions
+                        </span>
+
+                        <i
+                            data-lucide="brain-circuit"
+                            class="kpi-icon ai"
+                        ></i>
+
+                    </div>
+
+
+                    <div class="kpi-value-row">
+
+                        <span class="kpi-value">
+                            3
+                        </span>
+
+                        <span class="kpi-small">
+                            completed
+                        </span>
+
+                    </div>
+
+
+                    <p class="kpi-description">
+                        Last session 2 days ago.
+                    </p>
+
+                </div>
+
+
+                <!-- READINESS -->
+
+                <div class="kpi-card">
+
+                    <div class="kpi-header">
+
+                        <span class="kpi-label">
+                            Readiness
+                        </span>
+
+                        <i
+                            data-lucide="badge-check"
+                            class="kpi-icon success"
+                        ></i>
+
+                    </div>
+
+
+                    <div class="kpi-value-row">
+
+                        <span class="kpi-value ready">
+                            Ready
+                        </span>
+
+                    </div>
+
+
+                    <p class="kpi-description">
+                        Approved for technical screening.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            
+
+            <div class="dashboard-grid">
+
+
+
+                <div class="card">
+
+                    <div class="card-header">
+
+                        <div class="card-title">
+
+                            <i data-lucide="file-text"></i>
+
+                            <span>
+                                Resume Analysis
+                            </span>
+
+                        </div>
+
+                        <a href="#" class="card-action">
+                            View Full Resume
+                        </a>
+
+                    </div>
+
+
+                    <div class="card-body">
+
+                        <!-- MATCHED SKILLS -->
+
+                        <div class="section-label">
+                            Extracted Skills (Matched)
+                        </div>
+
+
+                        <div class="skills">
+
+                            <span class="skill">
+                                <i data-lucide="circle-check"></i>
+                                React.js
+                            </span>
+
+                            <span class="skill">
+                                <i data-lucide="circle-check"></i>
+                                TypeScript
+                            </span>
+
+                            <span class="skill">
+                                <i data-lucide="circle-check"></i>
+                                Node.js
+                            </span>
+
+                            <span class="skill">
+                                <i data-lucide="circle-check"></i>
+                                REST APIs
+                            </span>
+
+                            <span class="skill">
+                                <i data-lucide="circle-check"></i>
+                                Git
+                            </span>
+
+                        </div>
+
+
+                        <div class="divider"></div>
+
+
+                        <!-- GAP ANALYSIS -->
+
+                        <div class="section-label">
+                            Gap Analysis
+                        </div>
+
+
+                        <!-- GRAPHQL -->
+
+                        <div class="gap-item danger">
+
+                            <i
+                                data-lucide="circle-alert"
+                                class="gap-icon"
+                            ></i>
+
+                            <div class="gap-content">
+
+                                <strong>
+                                    GraphQL
+                                </strong>
+
+                                <p>
+                                    Frequently requested for Senior Frontend roles.
+                                    Consider adding this skill set to your resume.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- DOCKER -->
+
+                        <div class="gap-item info">
+
+                            <i
+                                data-lucide="info"
+                                class="gap-icon"
+                            ></i>
+
+                            <div class="gap-content">
+
+                                <strong>
+                                    Docker
+                                </strong>
+
+                                <p>
+                                    Mentioned in previous roles but not explicitly
+                                    listed in Skills section.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!--  RIGHT COLUMN  -->
+
+                <div class="right-column">
+
+
+                    <!-- AI INTERVIEW -->
+
+                    <div class="interview-card">
+
+                        <div class="interview-icon">
+                            <i data-lucide="mic"></i>
+                        </div>
+
+
+                        <h2>
+                            Quick Start AI Interview
+                        </h2>
+
+
+                        <p>
+                            Test your skills against personalized technical
+                            questions based on your resume gaps.
+                        </p>
+
+
+                        <button class="start-button">
+
+                            Start Session
+
+                            <i data-lucide="arrow-right"></i>
+
+                        </button>
+
+                    </div>
+
+
+                    <!-- JOB RECOMMENDATIONS -->
+
+                    <div class="card job-card">
+
+                        <div class="card-header">
+
+                            <div class="card-title">
+
+                                <i data-lucide="clock-3"></i>
+
+                                <span>
+                                    Top Job Recommendations
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="card-body">
+
+
+                            <!-- JOB 1 -->
+
+                            <div class="job">
+
+                                <div class="job-header">
+
+                                    <div class="job-title">
+                                        Senior Frontend Engineer
+                                    </div>
+
+                                    <span class="match-badge">
+                                        92% Match
+                                    </span>
+
+                                </div>
+
+
+                                <div class="company">
+                                    TechCorp Inc. • Remote
+                                </div>
+
+
+                                <div class="job-tags">
+
+                                    <span class="job-tag">
+                                        React
+                                    </span>
+
+                                    <span class="job-tag">
+                                        TypeScript
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                            <!-- JOB 2 -->
+
+                            <div class="job">
+
+                                <div class="job-header">
+
+                                    <div class="job-title">
+                                        Fullstack Developer
+                                    </div>
+
+                                    <span class="match-badge">
+                                        85% Match
+                                    </span>
+
+                                </div>
+
+
+                                <div class="company">
+                                    Innovate Solutions • New York (Hybrid)
+                                </div>
+
+
+                                <div class="job-tags">
+
+                                    <span class="job-tag">
+                                        React
+                                    </span>
+
+                                    <span class="job-tag">
+                                        Node.js
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                            <!-- JOB 3 -->
+
+                            <div class="job">
+
+                                <div class="job-header">
+
+                                    <div class="job-title">
+                                        React Developer
+                                    </div>
+
+                                    <span class="match-badge">
+                                        81% Match
+                                    </span>
+
+                                </div>
+
+
+                                <div class="company">
+                                    Digital Labs • Remote
+                                </div>
+
+
+                                <div class="job-tags">
+
+                                    <span class="job-tag">
+                                        React
+                                    </span>
+
+                                    <span class="job-tag">
+                                        REST APIs
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<!-- Initialize Lucide Icons -->
+
+<script>
+    lucide.createIcons();
+</script>
+
+</body>
+</html>
