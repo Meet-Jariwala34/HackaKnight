@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 import { FileText, User, Eye, Rocket, Loader2 } from 'lucide-react';
+import { useAuth } from '../context/AuthContext';
 
 export default function Auth({ onLoginSuccess }) {
   const [isSignUp, setIsSignUp] = useState(false);
@@ -10,29 +11,30 @@ export default function Auth({ onLoginSuccess }) {
   const [isLoading, setIsLoading] = useState(false);
   const [errorMsg, setErrorMsg] = useState('');
 
+  const { login, signup, demoLogin } = useAuth();
+  const navigate = useNavigate();
+
   // Handle Form Submission (Sign In or Sign Up)
   const handleSubmit = async (e) => {
     e.preventDefault();
     setErrorMsg('');
     setIsLoading(true);
 
-    const endpoint = isSignUp ? '/signup' : '/login';
-    const payload = isSignUp ? { name, email, password } : { email, password };
-
     try {
-      const response = await axios.post(`http://localhost:5000/api/auth${endpoint}`, payload, {
-        withCredentials: true // For Refresh Token cookie
-      });
-
-      // Save short-lived Access Token in sessionStorage / localStorage
-      localStorage.setItem('accessToken', response.data.accessToken);
-      localStorage.setItem('user', JSON.stringify(response.data.user));
+      let loggedUser;
+      if (isSignUp) {
+        loggedUser = await signup({ name, email, password });
+      } else {
+        loggedUser = await login(email, password);
+      }
 
       if (onLoginSuccess) {
-        onLoginSuccess(response.data.user);
+        onLoginSuccess(loggedUser);
       }
+
+      navigate('/dashboard', { replace: true });
     } catch (err) {
-      setErrorMsg(err.response?.data?.error || 'Authentication failed. Please try again.');
+      setErrorMsg(err.response?.data?.error || 'Authentication failed. Please check your credentials.');
     } finally {
       setIsLoading(false);
     }
@@ -42,17 +44,15 @@ export default function Auth({ onLoginSuccess }) {
   const handleDemoLogin = async () => {
     setErrorMsg('');
     setIsLoading(true);
-    try {
-      const response = await axios.post('http://localhost:5000/api/auth/demo-login', {}, {
-        withCredentials: true
-      });
 
-      localStorage.setItem('accessToken', response.data.accessToken);
-      localStorage.setItem('user', JSON.stringify(response.data.user));
+    try {
+      const demoUser = await demoLogin();
 
       if (onLoginSuccess) {
-        onLoginSuccess(response.data.user);
+        onLoginSuccess(demoUser);
       }
+
+      navigate('/dashboard', { replace: true });
     } catch (err) {
       setErrorMsg('Demo login failed. Ensure the server is running.');
     } finally {
@@ -219,7 +219,7 @@ export default function Auth({ onLoginSuccess }) {
               <button
                 type="submit"
                 disabled={isLoading}
-                className="w-full py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-xl text-lg font-bold transition-all shadow-md flex items-center justify-center gap-2"
+                className="w-full py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-xl text-lg font-bold transition-all shadow-md flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
               >
                 {isLoading ? <Loader2 className="w-5 h-5 animate-spin" /> : (isSignUp ? 'Sign Up' : 'Sign In')}
               </button>
@@ -230,7 +230,7 @@ export default function Auth({ onLoginSuccess }) {
               <button
                 type="button"
                 onClick={() => { setIsSignUp(!isSignUp); setErrorMsg(''); }}
-                className="font-bold text-blue-600 hover:underline ml-1"
+                className="font-bold text-blue-600 hover:underline ml-1 cursor-pointer"
               >
                 {isSignUp ? 'Sign In' : 'Sign Up'}
               </button>
@@ -247,7 +247,7 @@ export default function Auth({ onLoginSuccess }) {
               onClick={handleDemoLogin}
               disabled={isLoading}
               type="button"
-              className="bg-white border border-slate-300 hover:bg-slate-50 px-5 py-2.5 rounded-xl font-bold text-sm text-slate-900 shadow-sm flex items-center gap-2 transition-all"
+              className="bg-white border border-slate-300 hover:bg-slate-50 px-5 py-2.5 rounded-xl font-bold text-sm text-slate-900 shadow-sm flex items-center gap-2 transition-all cursor-pointer disabled:opacity-50"
             >
               <Rocket className="w-4 h-4 text-blue-600" />
               Demo login
