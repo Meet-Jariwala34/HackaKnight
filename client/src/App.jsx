@@ -40,7 +40,6 @@ export default function App() {
         <Route path="/corrections" element={<ResumeCorrections />} />
         <Route path="/jobs" element={<OpenJobs />} />
         <Route path="/interview" element={<MockInterview />} />
-      </Route>
 
       {/* 3. Fallbacks */}
       <Route path="/" element={<Navigate to="/dashboard" replace />} />
