@@ -34,20 +34,7 @@ export default function App() {
 
   return (
     <Routes>
-      {/* 1. Public Auth Route */}
-      <Route
-        path="/auth"
-        element={!isAuthenticated ? <Auth/> : <Navigate to="/dashboard" replace />}
-      />
-
-      {/* 2. Protected Routes */}
-      <Route
-        element={
-          <ProtectedRoute>
-            <AppLayout />
-          </ProtectedRoute>
-        }
-      >
+      
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/upload" element={<ResumeUpload />} />
         <Route path="/corrections" element={<ResumeCorrections />} />
