@@ -35,11 +35,17 @@ export default function App() {
   return (
     <Routes>
       
+        <Route
+        element={
+            <AppLayout />
+        }
+      >
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/upload" element={<ResumeUpload />} />
         <Route path="/corrections" element={<ResumeCorrections />} />
         <Route path="/jobs" element={<OpenJobs />} />
         <Route path="/interview" element={<MockInterview />} />
+      </Route>
 
       {/* 3. Fallbacks */}
       <Route path="/" element={<Navigate to="/dashboard" replace />} />
